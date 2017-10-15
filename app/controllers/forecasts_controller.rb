@@ -4,8 +4,8 @@ class ForecastsController < ApplicationController
 	end
 
 	def create
-		store_location_for :user, request.url
+	
 		@forecast = Forecast.request(params[:forecast])
-		debug_me = true
+		
 	end
 end
