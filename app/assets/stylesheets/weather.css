@@ -1,0 +1,22 @@
+
+body {
+    padding-top: 50px;
+}
+.inner-content {
+
+}
+
+.widget-box {
+	border: 1px solid #ddd;
+      padding: 5px;
+      border-radius: 4px;
+}
+
+.todays-forecast {
+	padding: 10px;
+}
+
+.weekly-forecast {
+	padding: 10px;
+}
+
