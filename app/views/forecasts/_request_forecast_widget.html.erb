@@ -1,8 +1,8 @@
 <div class="widget request-forecast">
   <%= form_for :forecast, url: forecast_create_path, method: 'GET' do |f| %>
       <%= f.label :location, "Location" %>
-      <%= f.text_field :location, :class => 'typeahead' %>
-      <%= f.submit 'Go', :class => 'submit-forecast' %>
+      <%= f.text_field :location  %>
+      <%= f.submit 'Go' %>
   <% end %>
 
 </div>

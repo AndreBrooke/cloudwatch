@@ -4,8 +4,6 @@ class ForecastsController < ApplicationController
 	end
 
 	def create
-	
 		@forecast = Forecast.request(params[:forecast])
-		
 	end
 end

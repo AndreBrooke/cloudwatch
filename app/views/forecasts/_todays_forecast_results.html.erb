@@ -1,12 +1,11 @@
 
 <div class="widget todays-forecast col-md-4">
-  <div class="inner">
+  <div class="widget-box inner">
     <div class="highlight text-center">Todays Forecast</div>
     <div class="results">
       <p class="lead text-center">For <%= forecast.location %></p>
-      <div class="<%= forecast.currently.icon %>"></div>
       <p>Summary: <%= forecast.currently.summary %></p>
-      <%= forecast.currently.icon %>
+      <i class="wi wi-forecast-io-<%= forecast.currently.icon %>"></i> 
       <p>Temperature: <%= forecast.currently.temperature %></p>
     </div>
   </div>

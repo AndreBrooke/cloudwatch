@@ -1,6 +1,6 @@
 class Forecast < ApplicationRecord
 	extend ActiveModel::Naming
-	include ActiveModel::Conversion
+
 	attr_accessor :location
 
 	def initialize(location, forecast_io_object)
@@ -10,11 +10,11 @@ class Forecast < ApplicationRecord
 
 	def self.request(attributes)
 		geo = ::Geocoder.search(attributes[:location]).first
-		self.new attributes[:location], ForecastIO.forecast(geo.latitude, geo.longitude, units: "uk")
+		self.new attributes[:location], ForecastIO.forecast(geo.latitude, geo.longitude,  params: { units: 'si' })
 	end
 
 	def daily_summary
-		@forecast_io_object.daily_summary
+		@forecast_io_object.daily.summary
 	end
 
 	def daily_icon
