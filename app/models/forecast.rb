@@ -1,5 +1,6 @@
 class Forecast < ApplicationRecord
 	extend ActiveModel::Naming
+ 
 
 	attr_accessor :location
 
