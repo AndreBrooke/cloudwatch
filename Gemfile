@@ -39,9 +39,10 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-
+  gem 'guard-rspec', require: false
   gem 'rspec-rails', '~> 3.6'
-
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
 group :development do
@@ -58,3 +59,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'figaro'
 gem 'forecast_io'
 gem 'geocoder'
+gem 'bcrypt'
+

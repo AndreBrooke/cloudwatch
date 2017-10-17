@@ -1,5 +1,5 @@
 class ForecastsController < ApplicationController
-	def new
+	def index
 
 	end
 
