@@ -2,7 +2,7 @@
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="/">Cloudwatch</a>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto"> 
@@ -15,12 +15,17 @@
         <% end %>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <% if !current_user %>
+        <%= link_to "Sign In", login_path, class:"nav-link" %>
+        <% end %>
       </li>
       <li class="nav-item">
         <% if current_user %>
         <%= link_to "My Profile", user_path(current_user), class:"nav-link" %>
         <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "All users", users_path, class:"nav-link" %>
       </li>
 
     </ul>

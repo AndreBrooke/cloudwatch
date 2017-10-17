@@ -22,11 +22,11 @@ class UserController < ApplicationController
 	end
 
 	def index
-		@users = Users.all
+		@users = User.all
 		if params[:search]
-			@users = Users.search(params[:search]).page(params[:page]).order("created_at DESC")
+			@users = User.search(params[:search]).page(params[:page]).order("created_at DESC")
 		else
-			@users = Users.all.page(params[:page]).order('created_at DESC')
+			@users = User.all.page(params[:page]).order('created_at DESC')
 		end
 	end
 

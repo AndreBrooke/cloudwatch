@@ -9,7 +9,8 @@ Rails.application.routes.draw do
  post '/login' => 'sessions#create'
  get '/logout' => 'sessions#destroy'
 
+ get '/users/:id' => 'user#show', as: "user"
  get '/signup' => 'user#new'
  post '/users' => 'user#create' 
- get '/users/:id' => 'user#show', as: "user"
+ get '/users' => 'user#index'
 end
