@@ -1,7 +1,6 @@
 class Forecast < ApplicationRecord
 	extend ActiveModel::Naming
  	
-
 	attr_accessor :location
 
 	def initialize(location, forecast_io_object)
@@ -23,7 +22,6 @@ class Forecast < ApplicationRecord
 	end
 
 	def daily
-		
 		@forecast_io_object.daily.data
 	end
 

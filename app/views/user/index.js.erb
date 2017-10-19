@@ -1,1 +1,19 @@
-$("#submit-search").after("<%= escape_javascript(render partial: 'results', locals: { user: @users} ) %>"); 
+
+// 	$("#submit-search").click(function(){
+//     $("#user_name").append("@user.name");
+//     $("#email").append("@user.email");
+//     $("#role").append("@user.role");
+// });
+	
+	if ($("#user-results").length !== 0){
+		
+		$("#user-results").remove()
+
+	}
+	else {
+
+	 	$("#submit-search").after("<%= escape_javascript(render partial: 'results', locals: { user: @users} ) %>"); 
+	}
+	
+
+
