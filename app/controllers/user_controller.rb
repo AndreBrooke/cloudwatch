@@ -1,7 +1,6 @@
 class UserController < ApplicationController
 	
 
-
 	def new
 		
 	end
@@ -22,19 +21,22 @@ class UserController < ApplicationController
 	end
 
 	def index
-		@users = Users.all
+		@users = User.all
 		if params[:search]
-			@users = Users.search(params[:search]).page(params[:page]).order("created_at DESC")
+			@users = User.search(params[:search]).page(params[:page]).order("created_at DESC")
+			respond_to do |format|
+				format.html {redirect_to users_path}
+				format.js
+			end
 		else
-			@users = Users.all.page(params[:page]).order('created_at DESC')
+
+		
+			@users = User.all.page(params[:page]).order('created_at DESC')
 		end
 	end
 
-	def edit
-	end
 
-	def delete
-	end
+
 
 	private
 
@@ -42,4 +44,6 @@ class UserController < ApplicationController
 		params.require(:user).permit(:name, :password, :email, :password_confirmation, :role)
 
 	end
+
+
 end

@@ -5,34 +5,14 @@
 		<% end %>
 	</div>
 </div> 
+<div class="container">
+	      <%= form_tag(users_path, :method=> "get", id: "search-form", remote: true)  do %>
+        <%= text_field_tag :search, params[:search], placeholder:"search for users", class:"form-control mr-sm-2", :required => 'required' %>
+        <%= submit_tag "Search", :name => nil, id: "submit-search" %>
+      <% end %>
 
-<div class="row">
-	<% if current_user %>
-	<div class="col-md-3">
-		<ul class="sidebar-list">
-			
-		</ul>
-	</div>
-	<% end %>
-	<div class="col-md-9">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-				Users
-			</div>
-			<div class="panel-body">
-				<% if @users.empty? == false %>
-				<%= will_paginate @users %>
-
-				<% @users.each do |l| %>
-					<div class="row">
-						<div class="col-md-2">
-							<p><%= l.name %></p>
-							<p><%= l.email %></p>
-							<p><%= l.role %></p>
-						</div>
-					</div>
-						
-			</div>
-		</div>
-	</div>
+     
+    
+    <br>
+	
 </div>
