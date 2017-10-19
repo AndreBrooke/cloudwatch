@@ -6,7 +6,13 @@
 	Email: <%= f.text_field :email %>
 	Password: <%= f.password_field :password %>
 	Password Confirmation: <%= f.password_field :password_confirmation %>
+
+
 	
-	<%= select_tag(:role, options_for_select([['User', 0],['Superuser', 1],['Admin', 2]])) %>
+	<%= f.select(:role) do %>
+		<% [['user'],['superuser'],['admin']].each do |c| %>
+			<%= content_tag(:option, c.first, value: c.last) %>
+			<% end %>
+		<% end %>
 	<%= f.submit "Submit" %>
 <% end %>

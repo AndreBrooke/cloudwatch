@@ -1,3 +1,7 @@
 <div class="container">
+	<% if current_user %>
   <%= render partial: 'request_forecast_widget', locals: {forecast: @forecast} %>
+  	<% else %>
+  	<p>Please Sign in to make a forecast </p>
+  	<% end %>
 </div>
