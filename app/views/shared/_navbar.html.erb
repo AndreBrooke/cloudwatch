@@ -9,6 +9,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
+    
       <li class="nav-item">
         <% if !current_user %>
         <%= link_to "Sign Up", signup_path, class:"nav-link" %> 
@@ -24,24 +25,16 @@
         <%= link_to "My Profile", user_path(current_user), class:"nav-link" %>
         <% end %>
       </li>
+        <% if current_user %>
       <li class="nav-item">
         <%= link_to "All users", users_path, class:"nav-link" %>
       </li>
+        <% end %>
 
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <%= form_tag(users_path, :method=> "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder:"search for users", class:"form-control mr-sm-2", :required => 'required' %>
-        <%= submit_tag "Search", :name => nil %>
-      <% end %>
-     
-    </form>
+    
   </div>
-  <div id="flash">  
-      <% flash.each do |key, value| %>
-        <div class="flash <%= key %>"><%= value %></div>
-      <% end %>
-    </div>
+  
 </nav>
     <div class="container">
 
